@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cartoon Dreamland - explore cartoons, characters, a quiz and more.">
+  <title>Home | Cartoon Dreamland</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Apply the saved theme before the page paints (prevents a white flash) */
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem('cd_theme'));
+        if (t !== 'dark' && t !== 'light') { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="home">
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="38" height="38">Cartoon Dreamland</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" data-page="home" href="index.html">Home</a></li><li><a class="nav-link" data-page="cartoons" href="cartoons.html">Cartoons</a></li><li><a class="nav-link" data-page="characters" href="characters.html">Characters</a></li><li><a class="nav-link" data-page="gallery" href="gallery.html">Gallery &amp; Quiz</a></li><li><a class="nav-link" data-page="about" href="about.html">About</a></li><li><a class="nav-link" data-page="contact" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" id="authLink" data-page="login" href="login.html">Log In</a></li>
+        <li><button id="themeToggle" class="theme-btn" type="button" aria-label="Switch between light and dark mode"><span class="theme-icon">&#9790;</span> Dark mode</button></li>
+      </ul>
+    </div>
+  </header>
+  <section class="hero">
+    <span class="sparkle s1" aria-hidden="true">&#10023;</span><span class="sparkle s2" aria-hidden="true">&#10022;</span>
+    <div class="container hero-grid">
+      <div>
+        <p class="hero-small">Welcome to a magical world</p>
+        <h1>Cartoon Dreamland</h1>
+        <div class="hero-actions">
+          <a class="btn" href="cartoons.html"><span class="btn-icon">&#9733;</span> Explore Cartoons</a>
+          <a class="btn btn-outline" href="signup.html">Create Account</a>
+        </div>
+      </div>
+      <div class="hero-art"><img src="images/hero.svg" alt="Three happy cartoon characters" width="440" height="440"></div>
+    </div>
+  </section>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">What You Can Do Here</h2>
+        <p class="section-sub reveal">Cartoon Dreamland is made for kids, students and anyone who grew up with animation and wants to rediscover it.</p>
+        <div class="grid grid-3">
+          <article class="card feature-card reveal"><div class="feature-icon" aria-hidden="true">&#127916;</div><h3 class="card-title">Cartoon Library</h3><p class="card-text">Search, filter by genre and decade, and sort 18 legendary cartoons.</p><p><a class="btn btn-small" href="cartoons.html">Open library</a></p></article>
+          <article class="card feature-card reveal"><div class="feature-icon" aria-hidden="true">&#129489;</div><h3 class="card-title">Live Characters</h3><p class="card-text">Meet the Dreamland 50 and browse thousands more from the public Disney API.</p><p><a class="btn btn-small" href="characters.html">Meet them</a></p></article>
+          <article class="card feature-card reveal"><div class="feature-icon" aria-hidden="true">&#127918;</div><h3 class="card-title">Quiz &amp; Gallery</h3><p class="card-text">Enjoy dreamy scenes and challenge yourself with a cartoon trivia quiz.</p><p><a class="btn btn-small" href="gallery.html">Play now</a></p></article>
+          <article class="card feature-card reveal"><div class="feature-icon" aria-hidden="true">&#10084;</div><h3 class="card-title">Your Profile</h3><p class="card-text">Sign up, log in and keep your favourite cartoons and characters.</p><p><a class="btn btn-small" href="signup.html">Join us</a></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--pink-light)">
+      <div class="container">
+        <h2 class="section-title reveal">Character of the Day</h2>
+        <div class="panel reveal"><div class="featured-box" id="featuredCharacter"></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stats panel reveal">
+          <div><div class="stat-num">18</div><p class="muted">Classic &amp; modern cartoons</p></div>
+          <div><div class="stat-num">9</div><p class="muted">Connected pages</p></div>
+          <div><div class="stat-num">100+</div><p class="muted">Years of animation</p></div>
+          <div><div class="stat-num">50</div><p class="muted">Featured characters</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
+        <div class="accordion reveal" style="margin-top:30px">
+          <div class="acc-item open"><button class="acc-btn" type="button" aria-expanded="true"><span>What is Cartoon Dreamland?</span><span class="acc-plus">+</span></button><div class="acc-panel"><p>A student-made website where fans can explore cartoons, find characters and save favourites.</p></div></div>
+          <div class="acc-item"><button class="acc-btn" type="button" aria-expanded="false"><span>Do I need an account?</span><span class="acc-plus">+</span></button><div class="acc-panel"><p>No, you can browse everything freely. An account lets you open a profile page that shows your details and saved favourites.</p></div></div>
+          <div class="acc-item"><button class="acc-btn" type="button" aria-expanded="false"><span>Where does the character data come from?</span><span class="acc-plus">+</span></button><div class="acc-panel"><p>From the free public Disney API (disneyapi.dev), loaded live with fetch().</p></div></div>
+          <div class="acc-item"><button class="acc-btn" type="button" aria-expanded="false"><span>Is my password safe?</span><span class="acc-plus">+</span></button><div class="acc-panel"><p>This is a demo without a server, so accounts are simulated in your own browser using localStorage. Please do not use a real password.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel text-center reveal">
+          <h2 class="section-title">Join Our Magical Newsletter</h2>
+          <p class="section-sub">Get news about new cartoons and features.</p>
+          <form id="newsletterForm" class="form-card" style="box-shadow:none;border:0;padding:0;background:transparent" novalidate>
+            <div class="field" style="text-align:left"><label for="newsName">Your name</label><input class="input" id="newsName" type="text" placeholder="e.g. Satur"><p class="error-msg" id="newsNameError"></p></div>
+            <div class="field" style="text-align:left"><label for="newsEmail">Your email</label><input class="input" id="newsEmail" type="text" inputmode="email" autocomplete="email" placeholder="name@example.com"><p class="error-msg" id="newsEmailError"></p></div>
+            <button class="btn" type="submit"><span class="btn-icon">&#9993;</span> Subscribe</button>
+            <p class="form-status" id="newsStatus" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Cartoon Dreamland</strong> &mdash; a magical home for cartoon lovers</p>
+      <p><a href="index.html">Home</a><a href="cartoons.html">Cartoons</a><a href="characters.html">Characters</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="signup.html">Sign Up</a></p>
+      <p>Akerke & Inzhu &middot; Group SE-2512</p>
+    </div>
+  </footer>
+  <script src="js/images-config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

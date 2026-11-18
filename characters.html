@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse animated characters loaded live from the Disney API.">
+  <title>Characters | Cartoon Dreamland</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Apply the saved theme before the page paints (prevents a white flash) */
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem('cd_theme'));
+        if (t !== 'dark' && t !== 'light') { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="characters">
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="38" height="38">Cartoon Dreamland</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" data-page="home" href="index.html">Home</a></li><li><a class="nav-link" data-page="cartoons" href="cartoons.html">Cartoons</a></li><li><a class="nav-link" data-page="characters" href="characters.html">Characters</a></li><li><a class="nav-link" data-page="gallery" href="gallery.html">Gallery &amp; Quiz</a></li><li><a class="nav-link" data-page="about" href="about.html">About</a></li><li><a class="nav-link" data-page="contact" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" id="authLink" data-page="login" href="login.html">Log In</a></li>
+        <li><button id="themeToggle" class="theme-btn" type="button" aria-label="Switch between light and dark mode"><span class="theme-icon">&#9790;</span> Dark mode</button></li>
+      </ul>
+    </div>
+  </header>
+  <section class="page-hero"><div class="container"><h1>Characters</h1><p>Meet 50 legendary characters from 28 cartoons</p></div></section>
+  <main>
+    <section class="section" id="roster">
+      <div class="container">
+        <h2 class="section-title">The Dreamland 50</h2>
+        <p class="section-sub">Search, filter, sort and save your favourites.</p>
+        <div class="toolbar" role="search">
+          <input class="input grow" id="rosterSearch" type="text" placeholder="Search by name or cartoon..." aria-label="Search the Dreamland 50">
+          <select class="input" id="rosterShow" aria-label="Filter by cartoon"><option value="all">All cartoons</option></select>
+          <select class="input" id="rosterRole" aria-label="Filter by role"><option value="all">All roles</option></select>
+          <select class="input" id="rosterSort" aria-label="Sort characters"><option value="name">Sort: Name A-Z</option><option value="year-old">Sort: Oldest first</option><option value="year-new">Sort: Newest first</option><option value="show">Sort: Cartoon</option></select>
+        </div>
+        <div class="roster-bar"><p class="result-info" id="rosterInfo" aria-live="polite"></p><div><button class="btn btn-small" id="rosterFavOnly" type="button" aria-pressed="false">&#10084; Saved only</button> <button class="btn btn-outline btn-small" id="rosterReset" type="button">&#8635; Reset</button></div></div>
+        <div class="state-box" id="rosterEmpty" hidden><p>No characters match your search. Try another name or filter.</p></div>
+        <div class="grid grid-4" id="rosterList"></div>
+        <div class="modal-backdrop" id="rosterModal" role="dialog" aria-modal="true" aria-labelledby="rosterModalTitle">
+          <div class="modal"><div id="rosterModalContent"></div><p style="margin-top:16px"><button class="btn btn-small" id="rosterModalClose" type="button">Close</button></p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section api-section">
+      <div class="container">
+        <h2 class="section-title">Live from the Disney API</h2>
+        <p class="section-sub">Thousands more characters, loaded in real time from the public Disney API.</p>
+        <div class="toolbar two" role="search">
+          <input class="input grow" id="characterSearch" type="text" placeholder="Search characters, e.g. Mickey, Elsa, Simba..." aria-label="Search characters">
+          <select class="input" id="characterType" aria-label="Filter by source">
+            <option value="all">All sources</option><option value="films">In films</option><option value="tvShows">In TV shows</option><option value="videoGames">In video games</option>
+          </select>
+          <button class="btn btn-outline" id="characterClear" type="button"><span class="btn-icon">&#8635;</span> Reset</button>
+        </div>
+        <p class="result-info" id="characterInfo" aria-live="polite"></p>
+        <div class="state-box" id="characterState" role="status"></div>
+        <div class="grid grid-4" id="characterList"></div>
+        <div class="text-center" style="margin-top:30px;display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-small" id="prevPage" type="button" disabled>&larr; Previous</button>
+          <span id="pageLabel" class="muted">Page 1 / 1</span>
+          <button class="btn btn-small" id="nextPage" type="button" disabled>Next &rarr;</button>
+        </div>
+        <p class="text-center muted" style="margin-top:22px;font-size:0.85rem">Data provided by the public <a href="https://disneyapi.dev" target="_blank" rel="noopener">Disney API</a>.</p>
+      </div>
+    </section>
+    <div class="modal-backdrop" id="characterModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal"><div id="modalContent"></div><p style="margin-top:16px"><button class="btn btn-small" id="modalClose" type="button">Close</button></p></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Cartoon Dreamland</strong> &mdash; a magical home for cartoon lovers</p>
+      <p><a href="index.html">Home</a><a href="cartoons.html">Cartoons</a><a href="characters.html">Characters</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="signup.html">Sign Up</a></p>
+      <p>Akerke & Inzhu &middot; Group SE-2512</p>
+    </div>
+  </footer>
+  <script src="js/characters-data.js"></script>
+  <script src="js/images-config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

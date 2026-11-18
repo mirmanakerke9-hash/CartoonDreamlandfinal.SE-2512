@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dreamy cartoon scenes and a fun trivia quiz.">
+  <title>Gallery &amp; Quiz | Cartoon Dreamland</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Apply the saved theme before the page paints (prevents a white flash) */
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem('cd_theme'));
+        if (t !== 'dark' && t !== 'light') { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="gallery">
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="38" height="38">Cartoon Dreamland</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" data-page="home" href="index.html">Home</a></li><li><a class="nav-link" data-page="cartoons" href="cartoons.html">Cartoons</a></li><li><a class="nav-link" data-page="characters" href="characters.html">Characters</a></li><li><a class="nav-link" data-page="gallery" href="gallery.html">Gallery &amp; Quiz</a></li><li><a class="nav-link" data-page="about" href="about.html">About</a></li><li><a class="nav-link" data-page="contact" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" id="authLink" data-page="login" href="login.html">Log In</a></li>
+        <li><button id="themeToggle" class="theme-btn" type="button" aria-label="Switch between light and dark mode"><span class="theme-icon">&#9790;</span> Dark mode</button></li>
+      </ul>
+    </div>
+  </header>
+  <section class="page-hero"><div class="container"><h1>Gallery &amp; Quiz</h1><p>Look at dreamy scenes, then test your cartoon knowledge.</p></div></section>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Dreamy Scenes</h2>
+        <p class="section-sub reveal">Click a small picture to see it bigger.</p>
+        <div class="gallery-main reveal">
+          <img id="galleryMain" src="images/gallery-1.svg" alt="Sunny Meadow" style="transition:opacity .25s ease" width="800" height="450">
+          <p class="gallery-caption" id="galleryCaption">Sunny Meadow</p>
+          <div class="thumbs">
+            <button class="thumb active" type="button" data-full="images/gallery-1.svg" data-caption="Sunny Meadow" aria-label="Show Sunny Meadow"><img src="images/gallery-1.svg" alt="Sunny Meadow thumbnail"></button>
+            <button class="thumb" type="button" data-full="images/gallery-2.svg" data-caption="Candy Castle" aria-label="Show Candy Castle"><img src="images/gallery-2.svg" alt="Candy Castle thumbnail"></button>
+            <button class="thumb" type="button" data-full="images/gallery-3.svg" data-caption="Moonlight Forest" aria-label="Show Moonlight Forest"><img src="images/gallery-3.svg" alt="Moonlight Forest thumbnail"></button>
+            <button class="thumb" type="button" data-full="images/gallery-4.svg" data-caption="Ocean Adventure" aria-label="Show Ocean Adventure"><img src="images/gallery-4.svg" alt="Ocean Adventure thumbnail"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:var(--pink-light)">
+      <div class="container">
+        <h2 class="section-title reveal">Cartoon Quiz</h2>
+        <p class="section-sub reveal">Five quick questions. Your best score is saved on this device.</p>
+        <div class="quiz-box panel reveal" id="quizBox"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Cartoon Dreamland</strong> &mdash; a magical home for cartoon lovers</p>
+      <p><a href="index.html">Home</a><a href="cartoons.html">Cartoons</a><a href="characters.html">Characters</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="signup.html">Sign Up</a></p>
+      <p>Akerke & Inzhu &middot; Group SE-2512</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

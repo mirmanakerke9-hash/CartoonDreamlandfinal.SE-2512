@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg-kangaroo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffecd2" />
+      <stop offset="100%" stop-color="#fcb69f" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Задний фон с градиентом -->
+  <rect width="200" height="200" fill="url(#bg-kangaroo)" />
+  
+  <!-- Длинные ушки кенгуру -->
+  <ellipse cx="74" cy="52" rx="12" ry="34" transform="rotate(-12 74 52)" fill="#d49255" />
+  <ellipse cx="74" cy="52" rx="6" ry="24" transform="rotate(-12 74 52)" fill="#ffd1dc" />
+  
+  <ellipse cx="126" cy="52" rx="12" ry="34" transform="rotate(12 126 52)" fill="#d49255" />
+  <ellipse cx="126" cy="52" rx="6" ry="24" transform="rotate(12 126 52)" fill="#ffd1dc" />
+
+  <!-- Голова -->
+  <ellipse cx="100" cy="114" rx="46" ry="48" fill="#e09f60" />
+  
+  <!-- Вытянутая мордочка кенгуру (светлая часть) -->
+  <ellipse cx="100" cy="126" rx="28" ry="22" fill="#ffd8b1" />
+
+  <!-- Глаза (как на первой карточке) -->
+  <ellipse cx="80" cy="108" rx="8" ry="11" fill="#2b1d16" />
+  <ellipse cx="120" cy="108" rx="8" ry="11" fill="#2b1d16" />
+  <circle cx="77" cy="104" r="3" fill="#ffffff" />
+  <circle cx="117" cy="104" r="3" fill="#ffffff" />
+
+  <!-- Пушистые реснички -->
+  <path d="M71 100 L66 95 M129 100 L134 95" stroke="#2b1d16" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Милый румянец -->
+  <ellipse cx="66" cy="120" rx="7" ry="4" fill="#ff758f" opacity="0.6" />
+  <ellipse cx="134" cy="120" rx="7" ry="4" fill="#ff758f" opacity="0.6" />
+
+  <!-- Носик и улыбка -->
+  <ellipse cx="100" cy="121" rx="8" ry="5" fill="#3d2314" />
+  <path d="M92 133 Q100 141 108 133" stroke="#3d2314" stroke-width="3" fill="none" stroke-linecap="round" />
+</svg>

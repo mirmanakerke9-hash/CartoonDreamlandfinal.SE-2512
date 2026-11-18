@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg-bingo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe5cc" />
+      <stop offset="1" stop-color="#ffd1dc" />
+    </linearGradient>
+  </defs>
+  <!-- Фон и блик -->
+  <rect width="200" height="200" fill="url(#bg-bingo)" />
+  <circle cx="170" cy="30" r="40" fill="#fff" opacity=".4" />
+  
+  <!-- Висячие ушки Бинго (рыже-коричневые) -->
+  <path d="M48 65 Q32 110 52 135 Q68 120 58 80 Z" fill="#d47a3e" />
+  <path d="M152 65 Q168 110 148 135 Q132 120 142 80 Z" fill="#d47a3e" />
+  
+  <!-- Плечи / платьице -->
+  <ellipse cx="100" cy="196" rx="52" ry="18" fill="#e8925b" opacity=".9" />
+  
+  <!-- Большая голова Бинго -->
+  <circle cx="100" cy="112" r="60" fill="#f0965d" />
+  
+  <!-- Светлая мордочка (характерная для породы хилер) -->
+  <path d="M60 100 Q100 80 140 100 Q152 145 100 156 Q48 145 60 100 Z" fill="#fce4d6" />
+  
+  <!-- Румянец -->
+  <circle cx="68" cy="132" r="9" fill="#ff7aa5" opacity=".45" />
+  <circle cx="132" cy="132" r="9" fill="#ff7aa5" opacity=".45" />
+  
+  <!-- Глаза -->
+  <ellipse cx="78" cy="106" rx="11" ry="14" fill="#fff" />
+  <ellipse cx="122" cy="106" rx="11" ry="14" fill="#fff" />
+  <circle cx="80" cy="108" r="6" fill="#3b2316" />
+  <circle cx="120" cy="108" r="6" fill="#3b2316" />
+  <circle cx="82" cy="105" r="2" fill="#fff" />
+  <circle cx="122" cy="105" r="2" fill="#fff" />
+  
+  <!-- Носик -->
+  <ellipse cx="100" cy="120" rx="9" ry="6" fill="#3b2316" />
+  
+  <!-- Улыбка -->
+  <path d="M86 135 Q100 150 114 135" stroke="#3b2316" stroke-width="4.5" fill="none" stroke-linecap="round" />
+</svg>

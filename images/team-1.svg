@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg-bambi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffecd2" />
+      <stop offset="100%" stop-color="#fcb69f" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="200" height="200" fill="url(#bg-bambi)" />
+  
+  <!-- Рожки оленёнка -->
+  <path d="M84 70 L72 50 M76 58 L68 54 M116 70 L128 50 M124 58 L132 54" stroke="#c27830" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Ушки оленёнка (чуть более вытянутые и опущенные в стороны) -->
+  <ellipse cx="62" cy="74" rx="12" ry="28" transform="rotate(-30 62 74)" fill="#d49255" />
+  <ellipse cx="62" cy="74" rx="6" ry="18" transform="rotate(-30 62 74)" fill="#ffd1dc" />
+  
+  <ellipse cx="138" cy="74" rx="12" ry="28" transform="rotate(30 138 74)" fill="#d49255" />
+  <ellipse cx="138" cy="74" rx="6" ry="18" transform="rotate(30 138 74)" fill="#ffd1dc" />
+
+  <!-- Голова (более мягкой, округлой формы) -->
+  <circle cx="100" cy="116" r="44" fill="#e09f60" />
+  
+  <!-- Светлая мордочка -->
+  <ellipse cx="100" cy="128" rx="26" ry="20" fill="#ffd8b1" />
+
+  <!-- Пятнышки на лбу -->
+  <circle cx="88" cy="86" r="3.5" fill="#fff3e0" />
+  <circle cx="100" cy="80" r="4" fill="#fff3e0" />
+  <circle cx="112" cy="86" r="3.5" fill="#fff3e0" />
+
+  <!-- Глаза с ресничками -->
+  <ellipse cx="81" cy="112" rx="7.5" ry="10" fill="#2b1d16" />
+  <ellipse cx="119" cy="112" rx="7.5" ry="10" fill="#2b1d16" />
+  <circle cx="78" cy="108" r="2.5" fill="#ffffff" />
+  <circle cx="116" cy="108" r="2.5" fill="#ffffff" />
+  <path d="M73 105 L68 100 M127 105 L132 100" stroke="#2b1d16" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Румянец -->
+  <ellipse cx="68" cy="124" rx="6" ry="3.5" fill="#ff758f" opacity="0.6" />
+  <ellipse cx="132" cy="124" rx="6" ry="3.5" fill="#ff758f" opacity="0.6" />
+
+  <!-- Носик и улыбка -->
+  <ellipse cx="100" cy="122" rx="7" ry="4.5" fill="#3d2314" />
+  <path d="M92 133 Q100 140 108 133" stroke="#3d2314" stroke-width="2.5" fill="none" stroke-linecap="round" />
+</svg>

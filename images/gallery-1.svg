@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#87cefa" />
+      <stop offset="1" stop-color="#e0f7fa" />
+    </linearGradient>
+    <linearGradient id="hill-back" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#81c784" />
+      <stop offset="1" stop-color="#66bb6a" />
+    </linearGradient>
+    <linearGradient id="hill-front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a5d6a7" />
+      <stop offset="1" stop-color="#4caf50" />
+    </linearGradient>
+  </defs>
+
+  <!-- Голубое небо -->
+  <rect width="200" height="200" fill="url(#sky-grad)" />
+
+  <!-- Солнце и лучи -->
+  <circle cx="155" cy="42" r="24" fill="#ffe066" opacity=".4" />
+  <circle cx="155" cy="42" r="17" fill="#ffd43b" />
+  <g stroke="#ffd43b" stroke-width="2.5" stroke-linecap="round">
+    <line x1="155" y1="14" x2="155" y2="20" />
+    <line x1="155" y1="64" x2="155" y2="70" />
+    <line x1="127" y1="42" x2="133" y2="42" />
+    <line x1="177" y1="42" x2="183" y2="42" />
+    <line x1="135" y1="22" x2="139" y2="26" />
+    <line x1="171" y1="58" x2="175" y2="62" />
+    <line x1="135" y1="62" x2="139" y2="58" />
+    <line x1="171" y1="26" x2="175" y2="22" />
+  </g>
+
+  <!-- Облака -->
+  <g fill="#ffffff" opacity=".9">
+    <circle cx="42" cy="45" r="12" />
+    <circle cx="56" cy="42" r="15" />
+    <circle cx="72" cy="46" r="11" />
+    <rect x="42" y="45" width="30" height="12" rx="6" />
+
+    <circle cx="102" cy="70" r="8" />
+    <circle cx="113" cy="68" r="10" />
+    <circle cx="124" cy="71" r="7" />
+    <rect x="102" y="70" width="22" height="8" rx="4" />
+  </g>
+
+  <!-- Дальний зелёный холм -->
+  <path d="M-10 135 Q55 95 125 130 T210 120 L210 200 L-10 200 Z" fill="url(#hill-back)" />
+
+  <!-- Ближний солнечный луг -->
+  <path d="M-10 150 Q85 115 210 155 L210 200 L-10 200 Z" fill="url(#hill-front)" />
+
+  <!-- Цветочки на лугу -->
+  <circle cx="38" cy="162" r="2.5" fill="#fff" />
+  <circle cx="38" cy="162" r="1" fill="#ffd43b" />
+
+  <circle cx="72" cy="175" r="3" fill="#ff8fab" />
+  <circle cx="72" cy="175" r="1.2" fill="#fff" />
+
+  <circle cx="128" cy="165" r="2.5" fill="#fff" />
+  <circle cx="128" cy="165" r="1" fill="#ffd43b" />
+
+  <circle cx="162" cy="178" r="3" fill="#ffe066" />
+  <circle cx="162" cy="178" r="1.2" fill="#fff" />
+
+  <circle cx="105" cy="184" r="2.5" fill="#ff8fab" />
+  <circle cx="105" cy="184" r="1" fill="#fff" />
+</svg>

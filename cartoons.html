@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search and filter a library of classic and modern cartoons.">
+  <title>Cartoon Library | Cartoon Dreamland</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Apply the saved theme before the page paints (prevents a white flash) */
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem('cd_theme'));
+        if (t !== 'dark' && t !== 'light') { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="cartoons">
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="38" height="38">Cartoon Dreamland</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" data-page="home" href="index.html">Home</a></li><li><a class="nav-link" data-page="cartoons" href="cartoons.html">Cartoons</a></li><li><a class="nav-link" data-page="characters" href="characters.html">Characters</a></li><li><a class="nav-link" data-page="gallery" href="gallery.html">Gallery &amp; Quiz</a></li><li><a class="nav-link" data-page="about" href="about.html">About</a></li><li><a class="nav-link" data-page="contact" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" id="authLink" data-page="login" href="login.html">Log In</a></li>
+        <li><button id="themeToggle" class="theme-btn" type="button" aria-label="Switch between light and dark mode"><span class="theme-icon">&#9790;</span> Dark mode</button></li>
+      </ul>
+    </div>
+  </header>
+  <section class="page-hero"><div class="container"><h1>Cartoon Library</h1></div></section>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="toolbar" role="search">
+          <input class="input grow" id="cartoonSearch" type="text" placeholder="Search by title, studio or story..." aria-label="Search cartoons">
+          <select class="input" id="cartoonGenre" aria-label="Filter by genre"><option value="all">All genres</option></select>
+          <select class="input" id="cartoonDecade" aria-label="Filter by decade"><option value="all">All decades</option></select>
+          <select class="input" id="cartoonSort" aria-label="Sort cartoons">
+            <option value="year-asc">Oldest first</option><option value="year-desc">Newest first</option><option value="title">Title A-Z</option>
+          </select>
+        </div>
+        <p class="result-info" id="cartoonInfo" aria-live="polite"></p>
+        <p><button class="btn btn-small btn-outline" id="cartoonClear" type="button">Reset filters</button></p>
+        <div class="grid grid-4" id="cartoonList"></div>
+        <div class="state-box" id="cartoonEmpty" hidden><p>No cartoons match your search. Try another word or reset the filters.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Cartoon Dreamland</strong> &mdash; a magical home for cartoon lovers</p>
+      <p><a href="index.html">Home</a><a href="cartoons.html">Cartoons</a><a href="characters.html">Characters</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="signup.html">Sign Up</a></p>
+      <p>Akerke & Inzhu &middot; Group SE-2512</p>
+    </div>
+  </footer>
+  <script src="js/images-config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
